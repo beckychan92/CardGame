@@ -7,17 +7,29 @@ void sortData(string names[], int scores[], int size);
 void displayData(const string names[], const int scores[], int size);
 int indexofBiggest(const int list[], int startingIndex, int numItems);
 
-const int size = 5;
+// const int size = 5;
 int main(){
     //declared arrays in main func
+    // string names[size];
+    // int scores[size];
+    
+    int size;
+    cout<<"How many scores will you enter?: ";
+    cin>>size;
 
-    string names[size];
-    int scores[size];
+    string *names;
+    names = new string[size];
+
+    int *scores;
+    scores = new int[size];
 
     //functions to call
     initializeArrays(names, scores, size);
     sortData(names, scores, size);
     displayData(names, scores, size);
+
+    delete [] names;
+    delete [] scores;
 
 }
 
